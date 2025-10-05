@@ -1,0 +1,1699 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Trung thu vui vẻ nhé</title>
+    
+    <!-- Meta tags cho SEO và chia sẻ mạng xã hội -->
+    <meta name="description" content="Bạn thật may mắn khi nhận được món quà này. Chúc bạn và gia đình luôn luôn hạnh phúc 🌕✨">
+    <meta name="keywords" content="trung thu, lời chúc, mưa chữ 3D, tình yêu, hạnh phúc, trăng rằm, messenger, facebook">
+    <meta name="author" content="Trung Thu">
+    
+    <!-- Open Graph Meta Tags cho Facebook & Messenger -->
+    <meta property="og:title" content="🌕 Trung thu vui vẻ nhé">
+    <meta property="og:description" content="Bạn thật may mắn khi nhận được món quà này. Chúc bạn và gia đình luôn luôn hạnh phúc 🌕✨">
+    <meta property="og:image" content="https://trung-thu-two.vercel.app/image/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Trung thu vui vẻ nhé - Lời chúc hạnh phúc với mặt trăng và thỏ">
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Trung Thu 3D">
+    <meta property="og:locale" content="vi_VN">
+    
+    <!-- Facebook App ID cho Messenger (nếu có) -->
+    <meta property="fb:app_id" content="">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="🌕 Trung thu vui vẻ nhé">
+    <meta name="twitter:description" content="Bạn thật may mắn khi nhận được món quà này. Chúc bạn và gia đình luôn luôn hạnh phúc 🌕✨">
+    <meta name="twitter:image" content="https://trung-thu-two.vercel.app/image/og-image.png">
+    <meta name="twitter:image:alt" content="Trung thu vui vẻ nhé - Lời chúc hạnh phúc với mặt trăng và thỏ">
+    
+    <!-- Additional Meta Tags cho Messenger -->
+    <meta property="article:author" content="Trung Thu">
+    <meta property="article:section" content="Lời chúc">
+    <meta property="article:tag" content="trung thu, lời chúc, tình yêu">
+    
+    <!-- Additional Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ff69b4">
+    <meta name="robots" content="index, follow">
+    
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+    margin: 0;
+    overflow: hidden;
+    background: black;
+    height: 100vh;
+    position: fixed;
+    width: 100%;
+}
+
+/* Loading Screen */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #000000 0%, #0d0e10 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    transition: opacity 0.5s ease-out;
+}
+
+.loading-container {
+    text-align: center;
+    color: white;
+}
+
+.loading-spinner {
+    width: 60px;
+    height: 60px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.loading-text {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: 'Dancing Script', cursive;
+    animation: fadeInOut 2s ease-in-out infinite;
+}
+
+.loading-subtitle {
+    font-size: 16px;
+    opacity: 0.8;
+    font-family: Arial, sans-serif;
+    animation: fadeInOut 2s ease-in-out infinite 0.5s;
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Error Screen */
+.error-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #f9d1d1 0%, #3e3636 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.error-container {
+    text-align: center;
+    color: white;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.error-icon {
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+
+.error-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-family: 'Dancing Script', cursive;
+}
+
+.error-message {
+    font-size: 16px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    opacity: 0.9;
+    font-family: Arial, sans-serif;
+}
+
+.error-button {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: Arial, sans-serif;
+}
+
+.error-button:hover {
+    background: white;
+    color: #ff6b6b;
+    transform: translateY(-2px);
+}
+
+html {
+    overflow: hidden;
+    height: 100%;
+}
+
+canvas {
+    display: block;
+}
+
+/* Background stars */
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Gift animation */
+.gift-container {
+    position: fixed;
+    top: 10%;
+    right: -200px;
+    /* Bắt đầu từ bên phải ngoài màn hình */
+    transform: translateY(-50%);
+    z-index: 15;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.gift {
+    width: 150px;
+    height: 150px;
+    animation: giftFloat 3s ease-in-out infinite;
+}
+
+.gift-container.show {
+    opacity: 1;
+    animation: giftMove 8s linear forwards;
+}
+
+/* Gift xuất hiện ở góc trái */
+.gift-appear {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 20;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.5s ease-in-out;
+}
+
+.gift-appear.show {
+    opacity: 1;
+    transform: scale(1);
+    animation: giftPulse 2s ease-in-out infinite;
+}
+
+.gift-image {
+    width: 100px;
+    height: 100px;
+}
+
+@keyframes giftMove {
+    0% {
+        right: -200px;
+    }
+
+    100% {
+        right: calc(100% + 200px);
+    }
+}
+
+@keyframes giftPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* Dialog popup */
+.dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.dialog-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background: linear-gradient(135deg, #ff6b6b, #ffd93d);
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    border: 3px solid #fff;
+}
+
+.dialog-overlay.show .dialog {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.dialog h2 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 28px;
+    font-family: 'Dancing Script', cursive;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.dialog p {
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 600;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.dialog button {
+    background: #fff;
+    color: #ff6b6b;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 18px;
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.dialog button:hover {
+    background: #ff6b6b;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Container cho ảnh dialog với QR */
+.dialog-image-container {
+    position: relative;
+    width: 550px;
+    height: 500px;
+    margin: 10px auto;
+    display: block;
+}
+
+.dialog-background {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.qr-overlay {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    image-rendering: auto;
+    animation-play-state: running;
+}
+
+
+.star {
+    position: absolute;
+    background: #ffd700;
+    border-radius: 50%;
+    animation: twinkle 3s infinite;
+}
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+
+/* Moon with rabbit - Top right */
+.moon-section {
+    position: fixed;
+    top: 1%;
+    right: 1%;
+    z-index: 10;
+}
+
+.moon {
+    width: 200px;
+    height: 200px;
+    animation: moon-glow 4s ease-in-out infinite;
+    filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.8));
+}
+
+/* Music control button */
+.music-control {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 15;
+}
+
+.play-pause-btn {
+    background: none;
+    border: 3px solid #edcb50;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.play-pause-btn:hover {
+    background: rgba(255, 215, 0, 1);
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.play-pause-btn:active {
+    transform: scale(0.95);
+}
+
+#playIcon {
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+
+
+
+@keyframes moon-glow {
+
+    0%,
+    100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.8));
+    }
+
+    50% {
+        transform: scale(1.05);
+        filter: drop-shadow(0 0 40px rgba(255, 215, 0, 1));
+    }
+}
+
+
+/* Floating lanterns */
+.floating-lanterns {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.lantern {
+    position: absolute;
+    width: 180px;
+    height: auto;
+    animation: float-up 8s linear infinite;
+    filter: drop-shadow(0 0 15px rgba(255, 140, 0, 0.6));
+}
+
+.lantern:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.lantern:nth-child(2) {
+    left: 20%;
+    animation-delay: 2s;
+}
+
+.lantern:nth-child(3) {
+    left: 30%;
+    animation-delay: 4s;
+}
+
+.lantern:nth-child(4) {
+    left: 60%;
+    animation-delay: 1s;
+}
+
+.lantern:nth-child(5) {
+    left: 70%;
+    animation-delay: 3s;
+}
+
+.lantern:nth-child(6) {
+    left: 80%;
+    animation-delay: 5s;
+}
+
+@keyframes float-up {
+    0% {
+        bottom: -100px;
+        opacity: 0;
+        transform: translateX(0px) rotate(0deg);
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        bottom: 100vh;
+        opacity: 0;
+        transform: translateX(20px) rotate(5deg);
+    }
+}
+
+/* Flying rabbit with ribbons - Middle left */
+.flying-rabbit-section {
+    position: fixed;
+    top: 30%;
+    left: 0;
+    z-index: 8;
+}
+
+.flying-rabbit {
+    width: 380px;
+    height: 380px;
+    animation: fly-around 6s ease-in-out infinite;
+}
+
+@keyframes fly-around {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(20px, -20px) rotate(5deg);
+    }
+
+    50% {
+        transform: translate(-10px, -30px) rotate(-5deg);
+    }
+
+    75% {
+        transform: translate(-20px, -10px) rotate(3deg);
+    }
+}
+
+/* Traditional woman - Bottom right */
+.woman-section {
+    position: fixed;
+    bottom: 10%;
+    right: -1%;
+    z-index: 7;
+}
+
+.woman {
+    width: 500px;
+    height: auto;
+    animation: gentle-sway 4s ease-in-out infinite;
+}
+
+@keyframes gentle-sway {
+
+    0%,
+    100% {
+        transform: rotate(-1deg);
+    }
+
+    50% {
+        transform: rotate(1deg);
+    }
+}
+
+.mountain-section {
+    position: fixed;
+    bottom: -30px;
+    left: -200px;
+    z-index: 6;
+}
+
+.mountain {
+    width: 120vw;
+    height: 40vh;
+}
+
+
+.flying-rabbit-section,
+.woman-section,
+.mountain-section,
+.floating-lanterns {
+    pointer-events: none;
+}
+
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+
+    /* Moon section - thu nhỏ và điều chỉnh vị trí */
+    .moon-section {
+        position: fixed;
+        top: 2%;
+        right: 2%;
+    }
+
+    .moon {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Music control button - mobile */
+    .play-pause-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    /* Flying rabbit - thu nhỏ và điều chỉnh */
+    .flying-rabbit-section {
+        position: fixed;
+        top: 65%;
+        left: -10%;
+    }
+
+    .flying-rabbit {
+        width: 200px;
+        height: 200px;
+    }
+
+    /* Woman section - thu nhỏ và điều chỉnh vị trí */
+    .woman-section {
+        position: fixed;
+        bottom: 5%;
+        right: -17%;
+    }
+
+    .woman {
+        width: 300px;
+        height: auto;
+    }
+
+    /* Mountain - thu nhỏ và điều chỉnh */
+    .mountain-section {
+        left: -10px;
+    }
+
+    .mountain {
+        width: 120vw;
+        height: 22vh;
+    }
+
+    /* Lanterns - thu nhỏ */
+    .lantern {
+        width: 60px;
+        height: auto;
+        max-width: 80px;
+    }
+
+    /* Dialog - mobile responsive */
+    .dialog {
+        max-width: 90vw;
+        padding: 8px;
+        margin: 10px;
+        border-radius: 15px;
+    }
+
+    .dialog h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .dialog p {
+        font-size: 14px;
+        line-height: 1.4;
+        margin-bottom: 15px;
+    }
+
+    .dialog button {
+        padding: 10px 20px;
+        font-size: 14px;
+        border-radius: 20px;
+    }
+
+    .dialog-image-container {
+        width: 80vw;
+        height: 40vh;
+        margin: 5px auto;
+    }
+
+    .qr-overlay {
+        width: 120px;
+        height: 120px;
+        top: 40%;
+    }
+
+}
+
+/* Extra small mobile responsive */
+@media (max-width: 480px) {
+    .dialog {
+        max-width: 95vw;
+        padding: 6px;
+        margin: 5px;
+        border-radius: 12px;
+    }
+
+    .dialog h2 {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+
+    .dialog p {
+        font-size: 12px;
+        line-height: 1.3;
+        margin-bottom: 12px;
+    }
+
+    .dialog button {
+        padding: 8px 16px;
+        font-size: 12px;
+        border-radius: 18px;
+    }
+
+    .dialog-image-container {
+        width: 85vw;
+        height: 35vh;
+        margin: 3px auto;
+    }
+
+    .qr-overlay {
+        width: 100px;
+        height: 100px;
+        top: 40%;
+    }
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .mountain-section {
+        left: -10px;
+    }
+
+    .moon {
+        width: 260px;
+        height: 260px;
+    }
+
+    /* Music control button - tablet */
+    .play-pause-btn {
+        width: 70px;
+        height: 70px;
+        font-size: 28px;
+    }
+
+    .flying-rabbit-section {
+        position: fixed;
+        top: 65%;
+        left: -10%;
+    }
+
+    .flying-rabbit {
+        width: 500px;
+        height: 500px;
+    }
+
+    .woman-section {
+        position: fixed;
+        bottom: 5%;
+        right: -17%;
+    }
+
+    .woman {
+        width: 700px;
+        height: auto;
+    }
+
+    .mountain {
+        width: 110vw;
+        height: 22vh;
+    }
+
+    .dialog {
+        max-width: 95vw;
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .dialog-image-container {
+        width: 85vw;
+        height: 65vh;
+    }
+
+    .qr-overlay {
+        width: 55vw;
+        height: 45vw;
+    }
+
+    .dialog p {
+        font-size: 28px;
+        font-family: 'Dancing Script', cursive;
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+
+    .dialog button {
+        padding: 15px 30px;
+        font-size: 20px;
+        font-family: 'Dancing Script', cursive;
+    }
+
+    .gift-container {
+        top: 7%;
+    }
+
+    .gift {
+        width: 180px;
+        height: 180px;
+    }
+
+    .gift-appear {
+        top: 30px;
+        left: 20px;
+
+    }
+
+    .gift-image {
+        width: 170px;
+        height: 170px;
+    }
+
+
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-container">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">Đang tải dữ liệu...</div>
+            <div class="loading-subtitle">Vui lòng chờ trong giây lát</div>
+        </div>
+    </div>
+
+    <!-- Error Screen -->
+    <div class="error-screen" id="errorScreen" style="display: none;">
+        <div class="error-container">
+            <div class="error-icon">⚠️</div>
+            <div class="error-title">Không tìm thấy ID</div>
+            <div class="error-message">Vui lòng kiểm tra lại đường link hoặc liên hệ người gửi</div>
+            <button class="error-button" onclick="location.reload()">Thử lại</button>
+        </div>
+    </div>
+
+    <!-- Background stars -->
+    <div class="stars" id="stars"></div>
+
+    <!-- Audio element -->
+    <audio id="backgroundMusic" loop preload="auto" crossorigin="anonymous">
+        <source src="music/anhnangcuaanh.mp3" type="audio/mpeg">
+        <source src="music/denbenanh.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Gift container -->
+    <div class="gift-container" id="giftContainer">
+        <img src="gift/rabbits.gif" alt="Gift" class="gift">
+    </div>
+
+    <!-- Gift xuất hiện ở góc trái -->
+    <div class="gift-appear" id="giftAppear">
+        <img src="image/gift.png" alt="Gift" class="gift-image" id="giftImage">
+    </div>
+
+    <!-- Dialog popup -->
+    <div class="dialog-overlay" id="dialogOverlay">
+        <div class="dialog">
+            <p>Chúc bạn một mùa Trung Thu tràn đầy niềm vui, hạnh phúc và may mắn! 🌕✨<br>
+                Mong rằng những điều tốt đẹp nhất sẽ đến với bạn trong năm nay!
+                <br>
+                Đây là món quà của người ấy dành cho bạn 
+                🐰🌙
+            </p>
+
+            <div class="dialog-image-container">
+                <img src="image/dialog.png" alt="Dialog Background" class="dialog-background">
+                <img src="gift/gift.gif" alt="Gift" class="qr-overlay" id="giftImage" style="cursor: pointer;" onerror="this.style.display='none'; console.error('Không thể load ảnh Gift:', this.src);">
+            </div>
+
+            <button onclick="closeDialog()">Đóng</button>
+        </div>
+    </div>
+    <!-- Moon with rabbit - Top right -->
+    <div class="moon-section">
+        <img src="image/moon.png" alt="Trăng Rằm" class="moon">
+        <!-- Music control button -->
+        <div class="music-control" id="musicControl">
+            <button id="playPauseBtn" class="play-pause-btn">
+                <span id="playIcon">🎵</span>
+            </button>
+        </div>
+        
+    </div>
+
+    <!-- Flying rabbit with ribbons - Middle left -->
+    <div class="flying-rabbit-section">
+        <img src="image/rabbits.png" alt="Thỏ bay" class="flying-rabbit">
+    </div>
+
+    <!-- Traditional woman - Bottom right -->
+    <div class="woman-section">
+        <img src="image/sister.png" alt="Người phụ nữ truyền thống" class="woman">
+    </div>
+
+    <!-- Mountain/Cloud shapes - Bottom -->
+    <div class="mountain-section">
+        <img src="image/mountain.png" alt="Mountain" class="mountain">
+    </div>
+
+    <div class="floating-lanterns">
+        <img src="image/lantern.png" alt="Đèn lồng bay" class="lantern">
+        <img src="image/lantern2.png" alt="Đèn lồng bay" class="lantern">
+        <img src="image/lantern.png" alt="Đèn lồng bay" class="lantern">
+        <img src="image/lantern2.png" alt="Đèn lồng bay" class="lantern">
+        <img src="image/lantern.png" alt="Đèn lồng bay" class="lantern">
+        <img src="image/lantern2.png" alt="Đèn lồng bay" class="lantern">
+    </div>
+
+
+    <!-- Three.js -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<!-- 
+    <script src="./detect-devtools.js"></script>
+  <script type='text/javascript'>
+        // Bypass for developers
+        const keyName = 'key';
+        const keyValue = '9ac7ec230e0e4513578f309d6d3579ad';
+
+        // Handle via config
+        DisableDevtool({
+            tkName: keyName,
+            md5: keyValue,
+            interval: '100',
+        });
+    </script> -->
+
+    <script>
+        // Global variables để lưu dữ liệu từ API
+        let apiData = null;
+        let currentId = null;
+        let giftLink = null; // Lưu link quà tặng từ backend
+
+        // Function để lấy ID từ URL parameters
+        function getIdFromUrl() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('id');
+        }
+
+        // Function để fetch dữ liệu từ API
+        //?id=68e11e05879bca395de21ad6
+        async function fetchDataFromAPI(id) {
+            try {
+                //const response = await fetch(`https://dearlove-backend.onrender.com/api/trungthu/${id}`);
+                const response = await fetch(`https://phong-1206.github.io/trungthuchobe/api.json`);
+                const result = await response.json();
+                
+                if (result.success && result.data) {
+                    apiData = result.data;
+                    console.log('Dữ liệu từ API:', apiData);
+                    return apiData;
+                } else {
+                    throw new Error(result.message || 'Không tìm thấy dữ liệu');
+                }
+            } catch (error) {
+                console.error('Lỗi khi fetch dữ liệu:', error);
+                // Fallback về dữ liệu mặc định nếu có lỗi
+                return null;
+            }
+        }
+
+        // Function để test audio URL
+        async function testAudioUrl(url) {
+            return new Promise((resolve) => {
+                const testAudio = new Audio();
+                testAudio.crossOrigin = 'anonymous';
+                
+                testAudio.addEventListener('canplaythrough', () => {
+                    console.log('Audio URL hợp lệ:', url);
+                    resolve(true);
+                });
+                
+                testAudio.addEventListener('error', () => {
+                    console.log('Audio URL không hợp lệ:', url);
+                    resolve(false);
+                });
+                
+                testAudio.src = url;
+                testAudio.load();
+            });
+        }
+
+        // Function để cập nhật audio source từ API
+        async function updateAudioSource() {
+            if (apiData && apiData.song) {
+                const audio = document.getElementById('backgroundMusic');
+                let audioUrl = apiData.song;
+                
+                // Kiểm tra nếu là URL đầy đủ hay chỉ là tên file
+                if (apiData.song.startsWith('http://') || apiData.song.startsWith('https://')) {
+                    // Test URL trước khi sử dụng
+                    const isValid = await testAudioUrl(apiData.song);
+                    if (isValid) {
+                        audio.src = apiData.song;
+                        console.log('Đã cập nhật audio source từ URL:', apiData.song);
+                    } else {
+                        console.log('URL audio không hợp lệ, sử dụng audio mặc định');
+                        audio.src = 'music/anhnangcuaanh.mp3';
+                    }
+                } else {
+                    // Nếu chỉ là tên file, thêm đường dẫn music/
+                    audio.src = `music/${apiData.song}`;
+                    console.log('Đã cập nhật audio source từ file:', apiData.song);
+                }
+                
+                // Load lại audio để áp dụng source mới
+                audio.load();
+            }
+        }
+
+
+        // Function để cập nhật URL ngay lập tức
+        function updateURLImmediately() {
+            const currentUrl = window.location.href;
+            const ogUrl = document.querySelector('meta[property="og:url"]');
+            if (ogUrl) {
+                ogUrl.setAttribute('content', currentUrl);
+                console.log('Đã cập nhật og:url thành:', currentUrl);
+            }
+        }
+
+        // Function để cập nhật meta tags cho chia sẻ mạng xã hội
+        function updateSocialMetaTags() {
+            // Cập nhật URL ngay lập tức (không cần đợi API)
+            updateURLImmediately();
+            
+            if (apiData) {
+                // Cập nhật title và description dựa trên dữ liệu API
+                let customTitle = "Trung thu vui vẻ nhé";
+                let customDescription = "Bạn thật may mắn khi nhận được món quà này. Chúc bạn và gia đình luôn luôn hạnh phúc 🌕✨";
+                
+                // Nếu có tên người gửi, thêm vào title
+                if (apiData.senderName) {
+                    customTitle = `Trung thu vui vẻ nhé - Từ ${apiData.senderName}`;
+                    customDescription = `${apiData.senderName} gửi lời chúc: Bạn thật may mắn khi nhận được món quà này. Chúc bạn và gia đình luôn luôn hạnh phúc 🌕✨`;
+                }
+                
+                // Cập nhật title của trang
+                document.title = customTitle;
+                
+                // Cập nhật meta description
+                const metaDescription = document.querySelector('meta[name="description"]');
+                if (metaDescription) {
+                    metaDescription.setAttribute('content', customDescription);
+                }
+                
+                // Cập nhật Open Graph tags
+                const ogTitle = document.querySelector('meta[property="og:title"]');
+                if (ogTitle) {
+                    ogTitle.setAttribute('content', customTitle);
+                }
+                
+                const ogDescription = document.querySelector('meta[property="og:description"]');
+                if (ogDescription) {
+                    ogDescription.setAttribute('content', customDescription);
+                }
+                
+                // Cập nhật Twitter tags
+                const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+                if (twitterTitle) {
+                    twitterTitle.setAttribute('content', customTitle);
+                }
+                
+                const twitterDescription = document.querySelector('meta[name="twitter:description"]');
+                if (twitterDescription) {
+                    twitterDescription.setAttribute('content', customDescription);
+                }
+                
+                // Sử dụng ảnh tĩnh og-image.png với URL đầy đủ
+                const ogImagePath = 'https://trung-thu-two.vercel.app/image/og-image.png';
+                const ogImageMeta = document.querySelector('meta[property="og:image"]');
+                if (ogImageMeta) {
+                    ogImageMeta.setAttribute('content', ogImagePath);
+                }
+                
+                const twitterImageMeta = document.querySelector('meta[name="twitter:image"]');
+                if (twitterImageMeta) {
+                    twitterImageMeta.setAttribute('content', ogImagePath);
+                }
+                
+                console.log('Đã cập nhật meta tags cho chia sẻ mạng xã hội với ảnh og-image.png');
+            }
+        }
+
+        // Function để lưu link quà tặng từ API
+        function updateGiftLink() {
+            if (apiData && apiData.linkQR && apiData.linkQR.trim() !== "") {
+                // Kiểm tra URL có hợp lệ không
+                if (apiData.linkQR.startsWith('http://') || apiData.linkQR.startsWith('https://')) {
+                    giftLink = apiData.linkQR;
+                    console.log('Đã lưu link quà tặng:', giftLink);
+                    
+                    // Cập nhật cursor để hiển thị có thể click
+                    const giftImage = document.getElementById('giftImage');
+                    if (giftImage) {
+                        giftImage.style.cursor = 'pointer';
+                        giftImage.title = 'Click để mở quà tặng';
+                    }
+                    
+                    // Hiển thị gift và thỏ khi có link hợp lệ
+                    showGiftAndRabbit();
+                } else {
+                    giftLink = null;
+                    console.log('URL quà tặng không hợp lệ:', apiData.linkQR);
+                    hideGiftAndRabbit();
+                }
+            } else {
+                giftLink = null;
+                console.log('LinkQR trống hoặc không có dữ liệu từ API');
+                hideGiftAndRabbit();
+            }
+        }
+
+        // Function để hiển thị gift và thỏ
+        function showGiftAndRabbit() {
+            console.log('Hiển thị gift và thỏ');
+            
+            // Hiển thị lại các element
+            const giftContainer = document.getElementById('giftContainer');
+            const giftAppear = document.getElementById('giftAppear');
+            
+            if (giftContainer) {
+                giftContainer.style.display = 'block';
+            }
+            if (giftAppear) {
+                giftAppear.style.display = 'block';
+            }
+            
+            // Bắt đầu animation
+            startGiftAnimation();
+        }
+
+        // Function để ẩn gift và thỏ
+        function hideGiftAndRabbit() {
+            console.log('Ẩn gift và thỏ vì không có linkQR');
+            
+            // Ẩn gift container (thỏ chạy)
+            const giftContainer = document.getElementById('giftContainer');
+            if (giftContainer) {
+                giftContainer.style.display = 'none';
+            }
+            
+            // Ẩn gift appear (gift ở góc trái)
+            const giftAppear = document.getElementById('giftAppear');
+            if (giftAppear) {
+                giftAppear.style.display = 'none';
+            }
+        }
+
+        // Function để hiển thị loading screen
+        function showLoading() {
+            const loadingScreen = document.getElementById('loadingScreen');
+            const errorScreen = document.getElementById('errorScreen');
+            loadingScreen.style.display = 'flex';
+            errorScreen.style.display = 'none';
+        }
+
+        // Function để ẩn loading screen
+        function hideLoading() {
+            const loadingScreen = document.getElementById('loadingScreen');
+            loadingScreen.style.opacity = '0';
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+            }, 500);
+        }
+
+        // Function để hiển thị error screen
+        function showError() {
+            const loadingScreen = document.getElementById('loadingScreen');
+            const errorScreen = document.getElementById('errorScreen');
+            loadingScreen.style.display = 'none';
+            errorScreen.style.display = 'flex';
+        }
+
+        // Function để khởi tạo dữ liệu
+        async function initializeData() {
+            showLoading();
+            
+            currentId = getIdFromUrl();
+            
+            if (currentId) {
+                console.log('ID từ URL:', currentId);
+                const data = await fetchDataFromAPI(currentId);
+                
+                if (data) {
+                    // Cập nhật các thành phần từ dữ liệu API
+                    await updateAudioSource();
+                    updateGiftLink();
+                    updateSocialMetaTags(); // Cập nhật meta tags cho chia sẻ
+                    console.log('Đã tải thành công dữ liệu từ API');
+                    hideLoading();
+                } else {
+                    console.warn('Không thể tải dữ liệu từ API');
+                    showError();
+                    return false;
+                }
+            } else {
+                console.log('Không có ID trong URL');
+                showError();
+                return false;
+            }
+            return true;
+        }
+
+        // Function để hiển thị thông báo lỗi
+        function showErrorMessage(message) {
+            // Tạo thông báo tạm thời
+            const errorDiv = document.createElement('div');
+            errorDiv.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: rgba(255, 0, 0, 0.8);
+                color: white;
+                padding: 10px 15px;
+                border-radius: 5px;
+                z-index: 10000;
+                font-size: 14px;
+                max-width: 300px;
+            `;
+            errorDiv.textContent = message;
+            document.body.appendChild(errorDiv);
+            
+            // Tự động ẩn sau 5 giây
+            setTimeout(() => {
+                if (errorDiv.parentNode) {
+                    errorDiv.parentNode.removeChild(errorDiv);
+                }
+            }, 5000);
+        }
+
+        // Create floating stars
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            const numStars = 80;
+
+            for (let i = 0; i < numStars; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.width = Math.random() * 2 + 1 + 'px';
+                star.style.height = star.style.width;
+                star.style.animationDelay = Math.random() * 3 + 's';
+                starsContainer.appendChild(star);
+            }
+        }
+
+        // Initialize stars when page loads
+        window.addEventListener('load', createStars);
+
+        // Dialog functions
+        function showDialog() {
+            const dialogOverlay = document.getElementById('dialogOverlay');
+            dialogOverlay.classList.add('show');
+        }
+
+        function closeDialog() {
+            const dialogOverlay = document.getElementById('dialogOverlay');
+            dialogOverlay.classList.remove('show');
+        }
+
+        // Add click event to gift image
+        document.addEventListener('DOMContentLoaded', function () {
+            // Cập nhật URL ngay khi DOM ready để Messenger có thể đọc
+            updateURLImmediately();
+            
+            // Click vào gift ở góc trái để mở dialog
+            const giftAppearImage = document.getElementById('giftImage');
+            if (giftAppearImage) {
+                giftAppearImage.addEventListener('click', showDialog);
+            }
+            
+            // Click vào gift trong dialog để mở link quà tặng
+            const dialogGiftImage = document.querySelector('.qr-overlay');
+            if (dialogGiftImage) {
+                dialogGiftImage.addEventListener('click', function() {
+                    if (giftLink) {
+                        window.open(giftLink, '_blank');
+                        console.log('Đã mở link quà tặng:', giftLink);
+                    } else {
+                        console.log('Chưa có link quà tặng từ backend');
+                        // Có thể hiển thị thông báo cho user
+                        alert('Chưa có link quà tặng từ người gửi');
+                    }
+                });
+            }
+            
+            // Music control functionality
+            setupMusicControls();
+        });
+
+        // Music control functions
+        function setupMusicControls() {
+            const audio = document.getElementById('backgroundMusic');
+            const playPauseBtn = document.getElementById('playPauseBtn');
+            const playIcon = document.getElementById('playIcon');
+            let isPlaying = false;
+
+            // Set volume to 50% for better user experience
+            audio.volume = 0.5;
+
+            // Play/Pause button click handler
+            playPauseBtn.addEventListener('click', function() {
+                if (isPlaying) {
+                    audio.pause();
+                    playIcon.textContent = '🎵';
+                    playIcon.style.opacity = '0.7';
+                } else {
+                    audio.play().then(() => {
+                        playIcon.textContent = '⏸️';
+                        playIcon.style.opacity = '1';
+                    }).catch(error => {
+                        console.log('Audio play failed:', error);
+                        // Fallback: show play button even if audio fails
+                        playIcon.textContent = '🎵';
+                    });
+                }
+                isPlaying = !isPlaying;
+            });
+
+            // Auto-play on mobile after user interaction
+            function enableAutoPlay() {
+                // Try to play audio after user interaction
+                audio.play().then(() => {
+                    isPlaying = true;
+                    playIcon.textContent = '⏸️';
+                    playIcon.style.opacity = '1';
+                }).catch(error => {
+                    console.log('Auto-play failed:', error);
+                });
+            }
+
+            // Enable auto-play after first user interaction
+            let hasInteracted = false;
+            document.addEventListener('click', function() {
+                if (!hasInteracted) {
+                    hasInteracted = true;
+                    enableAutoPlay();
+                }
+            }, { once: true });
+
+            // Handle audio events
+            audio.addEventListener('ended', function() {
+                isPlaying = false;
+                playIcon.textContent = '🎵';
+                playIcon.style.opacity = '0.7';
+            });
+
+            audio.addEventListener('error', function() {
+                console.log('Audio error occurred');
+                playIcon.textContent = '🔇';
+                playIcon.style.opacity = '0.5';
+            });
+        }
+
+
+        // Gift animation - chỉ chạy khi có linkQR hợp lệ
+        function startGiftAnimation() {
+            if (!giftLink) {
+                console.log('Không có linkQR, bỏ qua animation gift');
+                return;
+            }
+
+            setTimeout(() => {
+                const giftContainer = document.getElementById('giftContainer');
+                const giftAppear = document.getElementById('giftAppear');
+
+                if (giftContainer) {
+                    giftContainer.classList.add('show');
+                }
+
+                // Sau 6 giây: Ẩn thỏ và hiện gift ở góc trái (sớm hơn 2 giây)
+                setTimeout(() => {
+                    if (giftContainer) {
+                        giftContainer.classList.remove('show');
+                        giftContainer.style.opacity = '0';
+                        giftContainer.style.animation = 'none'; // Dừng animation di chuyển
+                    }
+
+                    // Hiện gift ở góc trái với hiệu ứng
+                    if (giftAppear) {
+                        giftAppear.classList.add('show');
+                    }
+                }, 6700);
+            }, 5000);
+        }
+        // scene + camera + renderer
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x000000);
+        const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 2000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setPixelRatio(window.devicePixelRatio || 1);
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // orbit controls (xoay quanh controls.target)
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.07;
+
+        // lights
+        const ambient = new THREE.AmbientLight(0xffffff, 0.6);
+        scene.add(ambient);
+        const dir = new THREE.DirectionalLight(0xffffff, 0.8);
+        dir.position.set(10, 20, 10);
+        scene.add(dir);
+
+        // group chứa text (dễ set target)
+        const textGroup = new THREE.Group();
+        scene.add(textGroup);
+
+        // Function để lấy danh sách câu chúc từ API hoặc dữ liệu mặc định
+        function getTexts() {
+            if (apiData && apiData.messages && apiData.messages.length > 0) {
+                return apiData.messages;
+            }
+            // Dữ liệu mặc định nếu không có từ API
+            return [
+            "iu em",
+            "Hạnh phúc",
+            "Luôn vui vẻ",
+            "Mong tình yêu chúng ta luôn bền lâu như trăng rằm ",
+            "Trung thu 2025",
+            "Cảm ơn em vì tất cả",
+            "iu công chúa của anh", 
+            "i love you", 
+            "mãi như vậy nhé"
+        ];
+        }
+
+        let objects = []; // chứa mesh + speed
+        let imageObjects = []; // chứa ảnh bay lên
+
+        // Function để lấy danh sách ảnh từ API hoặc dữ liệu mặc định
+        function getImagePaths() {
+            if (apiData && apiData.images && apiData.images.length > 0) {
+                return apiData.images;
+            }
+            // Trả về mảng rỗng nếu không có ảnh từ API
+            return [];
+        }
+
+        // hàm tạo mesh ảnh 3D
+        function makeImageMesh(imagePath) {
+            const loader = new THREE.TextureLoader();
+            const texture = loader.load(imagePath, function(texture) {
+                // Tính tỉ lệ gốc của ảnh
+                const aspectRatio = texture.image.width / texture.image.height;
+                
+                // Đặt kích thước dựa trên tỉ lệ gốc
+                const baseSize = 8;
+                let width, height;
+                
+                if (aspectRatio > 1) {
+                    // Ảnh ngang
+                    width = baseSize;
+                    height = baseSize / aspectRatio;
+                } else {
+                    // Ảnh dọc hoặc vuông
+                    width = baseSize * aspectRatio;
+                    height = baseSize;
+                }
+                
+                // Cập nhật geometry với tỉ lệ đúng
+                const geometry = new THREE.PlaneGeometry(width, height);
+                mesh.geometry.dispose();
+                mesh.geometry = geometry;
+            });
+            
+            const material = new THREE.MeshBasicMaterial({
+                map: texture,
+                transparent: true,
+                side: THREE.DoubleSide
+            });
+
+            const geometry = new THREE.PlaneGeometry(8, 8); // kích thước tạm thời
+            const mesh = new THREE.Mesh(geometry, material);
+
+            // thêm thuộc tính để điều khiển quỹ đạo bay
+            mesh.userData = {
+                originalY: mesh.position.y,
+                originalX: mesh.position.x,
+                originalZ: mesh.position.z,
+                pattern: Math.floor(Math.random() * 3) // 0: thẳng, 1: chéo trái, 2: chéo phải
+            };
+
+            return mesh;
+        }
+
+        // Đợi Google Fonts load xong trước khi tạo text
+        document.fonts.ready.then(function() {
+            console.log('Fonts loaded successfully');
+        });
+
+        // Function để test Messenger preview
+        function testMessengerPreview() {
+            console.log('=== MESSENGER PREVIEW TEST ===');
+            console.log('Title:', document.querySelector('meta[property="og:title"]')?.getAttribute('content'));
+            console.log('Description:', document.querySelector('meta[property="og:description"]')?.getAttribute('content'));
+            console.log('Image:', document.querySelector('meta[property="og:image"]')?.getAttribute('content'));
+            console.log('URL:', document.querySelector('meta[property="og:url"]')?.getAttribute('content'));
+            console.log('==============================');
+        }
+
+        // Khởi tạo dữ liệu khi trang load
+        window.addEventListener('load', async function() {
+            // Cập nhật URL ngay lập tức để Messenger có thể đọc đúng
+            updateSocialMetaTags();
+            
+            // Test Messenger preview
+            testMessengerPreview();
+            
+            const success = await initializeData();
+            // Chỉ tạo text và ảnh khi có dữ liệu thành công
+            if (success) {
+                createTextAndImages();
+            }
+        });
+
+        // Function để tạo text và ảnh sau khi có dữ liệu
+        function createTextAndImages() {
+            // load font rồi tạo text 3D
+            const fontLoader = new THREE.FontLoader();
+            fontLoader.load('https://cdn.jsdelivr.net/npm/three@0.128.0/examples/fonts/helvetiker_regular.typeface.json', function (font) {
+            // hàm tạo mesh text 3D
+            function makeTextMesh(message) {
+                const canvas = document.createElement("canvas");
+                const context = canvas.getContext("2d");
+
+                // Tự động tính kích thước canvas dựa trên độ dài chữ
+                context.font = "700 64px 'Dancing Script', cursive, 'Arial', sans-serif";
+                const textMetrics = context.measureText(message);
+                const textWidth = textMetrics.width;
+                const textHeight = 80; // chiều cao cố định
+
+                // Đặt kích thước canvas với padding
+                canvas.width = Math.max(textWidth + 40, 200); // tối thiểu 200px
+                canvas.height = textHeight + 20;
+
+                context.font = "700 64px 'Dancing Script', cursive, 'Arial', sans-serif";
+                context.fillStyle = "#ff69b4";
+                context.textAlign = "center";
+                context.textBaseline = "middle";
+                context.fillText(message, canvas.width / 2, canvas.height / 2);
+
+                const texture = new THREE.CanvasTexture(canvas);
+                const material = new THREE.MeshBasicMaterial({
+                    map: texture,
+                    transparent: true,
+                    side: THREE.DoubleSide  // để nhìn được cả mặt trước & sau
+                });
+
+                // Tự động tính kích thước geometry dựa trên canvas
+                const geometryWidth = (canvas.width / 512) * 12; // tỷ lệ với canvas gốc
+                const geometryHeight = (canvas.height / 256) * 6;
+                const geometry = new THREE.PlaneGeometry(geometryWidth, geometryHeight);
+                const mesh = new THREE.Mesh(geometry, material);
+                return mesh;
+            }
+
+
+            // tạo nhiều text 3D (số lượng moderate để không lag)
+            const texts = getTexts(); // Lấy dữ liệu động
+            const COUNT = 24; // nếu chậm giảm xuống 12-16
+            for (let i = 0; i < 60; i++) {
+                let text = texts[Math.floor(Math.random() * texts.length)];
+                let mesh = makeTextMesh(text);
+                // Tạo chữ với khoảng cách đều từ dưới lên
+                mesh.position.set((Math.random() - 0.5) * 80, -40 + (i * 1.5), (Math.random() - 0.5) * 80);
+                scene.add(mesh);
+                objects.push(mesh);
+            }
+
+            // tạo ảnh bay lên (ít hơn và phân bố đều)
+            const imagePaths = getImagePaths(); // Lấy dữ liệu động
+            if (imagePaths.length > 0) {
+                for (let i = 0; i < 12; i++) {
+                    let imagePath = imagePaths[Math.floor(Math.random() * imagePaths.length)];
+                    let imageMesh = makeImageMesh(imagePath);
+
+                    // Đặt vị trí với khoảng cách đều để tránh ngắt quãng
+                    imageMesh.position.set(
+                        (Math.random() - 0.5) * 80,
+                        -80 + (i * 6), // khoảng cách lớn hơn để phân tán
+                        (Math.random() - 0.5) * 80
+                    );
+
+                    scene.add(imageMesh);
+                    imageObjects.push(imageMesh);
+                }
+            } else {
+                console.log('Không có ảnh từ API, bỏ qua tạo ảnh bay lên');
+            }
+
+
+            // đặt camera và controls target để xoay quanh group (khoảng giữa)
+            camera.position.set(0, 12, 60);
+            controls.target.set(0, 10, 0);
+            controls.update();
+            });
+        }
+
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            // Animation cho text
+            objects.forEach(obj => {
+                obj.position.y += 0.08; // bay lên chậm hơn để mượt hơn
+                if (obj.position.y > 50) {
+                    obj.position.y = -50; // reset xuống dưới xa hơn để tránh đứt quãng
+                }
+            });
+
+            // Animation cho ảnh với các quỹ đạo bay khác nhau
+            imageObjects.forEach(imgObj => {
+                const pattern = imgObj.userData.pattern;
+
+                // Bay lên (tất cả đều bay lên)
+                imgObj.position.y += 0.06;
+
+                // Quỹ đạo bay khác nhau - chỉ thay đổi hướng bay
+                if (pattern === 0) {
+                    // Bay thẳng lên (không di chuyển ngang)
+                    imgObj.position.x += 0;
+                } else if (pattern === 1) {
+                    // Bay chéo sang trái (di chuyển sang trái khi bay lên)
+                    imgObj.position.x -= 0.03;
+                } else if (pattern === 2) {
+                    // Bay chéo sang phải (di chuyển sang phải khi bay lên)
+                    imgObj.position.x += 0.03;
+                }
+
+                // Reset khi bay quá cao - reset xa hơn để liền mạch
+                if (imgObj.position.y > 70) {
+                    imgObj.position.y = -90; // reset xa hơn để tránh khoảng trống
+                    imgObj.position.x = (Math.random() - 0.5) * 80;
+                    imgObj.position.z = (Math.random() - 0.5) * 80;
+                    // Random lại pattern
+                    imgObj.userData.pattern = Math.floor(Math.random() * 3);
+                }
+            });
+
+            controls.update();
+            renderer.render(scene, camera);
+        }
+
+
+        animate();
+
+        // handle resize
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
+</body>
+
+</html>
