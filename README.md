@@ -1,1 +1,1 @@
- Page: https://phong-1206.github.io/trungthuchobe/
+ Page: https://phong-1206.github.io/trungthuchobe/?id=kb
